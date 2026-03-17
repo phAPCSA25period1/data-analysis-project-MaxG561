@@ -70,8 +70,8 @@ UML_Diagram.png (or UML_Diagram.pdf)
 **Source / Link:**  
 
 **What this dataset contains (2–3 sentences):**  
-____________________________________________________________________  
-____________________________________________________________________  
+
+our data set  contains the data of state census which includes death rates from different sources, population, and more.
 
 ---
 
@@ -80,8 +80,7 @@ ____________________________________________________________________
 Your guiding question should be something you can answer using your dataset.
 
 **My guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+our guiding question  is if over dose death rates are related to gun violence death rates(drug addiction related to gun violence)  
 
 Examples:
 
@@ -103,12 +102,7 @@ You must create a class that represents **one row** of your dataset.
 - **`toString()`** for easy printing  
 - Any additional analysis/helper methods as needed  
 
-### ✏ Include your class diagram
 
-
----
-
-## 📥 Step 4 — Read Your CSV File Using Scanner
 
 In `Main.java`, you must:
 
@@ -122,13 +116,13 @@ In `Main.java`, you must:
 - Construct objects  
 - Add them to an ArrayList or array  
 
-### Column → Attribute Map
 
-| Attribute Name | CSV Column Name | Column Index # | Notes |
-|----------------|------------------|----------------|-------|
-|                |                  |                |       |
-|                |                  |                |       |
-|                |                  |                |       |
+| Column Index | Attribute             | Description                        |
+|--------------|--------------------|------------------------------------|
+| 0            | stateName          | State/territory name               |
+| 1            | population         | State population                   |
+| 3            | firearmDeathsPer100k | Firearm deaths per 100k population |
+| 5            | drugOverdoseDeathsPer100k | Drug overdose deaths per 100k population |
 
 ---
 
@@ -145,8 +139,8 @@ You must write **at least two algorithms** to analyze your dataset.
 
 **Algorithms I will implement:**
 
-1. __________________________________________  
-2. __________________________________________  
+1. average of attrivute  
+2. counting items mathcing a condition  
 
 Optional extras:  
 - Sorting  
@@ -165,13 +159,10 @@ After analyzing your objects, print:
 - ✔ A clear answer to your guiding question  
 
 **My findings:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+  52 rows were printed, the highest ratio of gun deaths to OD was 1.64 in Mississippi the lowest was 0.1 in Massachusetts and the average was around 0.75.
 
 **My answer to the guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+15 of the states were 0.25 within having a 1 to 1 ratio of gun to OD death rates meaning about 25% of states it might have relation in but the overarching and more obvious and clear answer is no  
 
 ---
 
@@ -198,14 +189,36 @@ public static int findMaxHP(ArrayList<Pokemon> list) {
 ```
 
 ### ✔ UML Class Diagram
-Add a UML diagram showing:
+**State Class UML Diagram (text-based):**
 
-- Class name
-- Attributes
-- Methods
-- Visibility (private/public)
+```
++-----------------------+
+|         State         |
++-----------------------+
+| - stateName: String   |
+| - population: int     |
+| - firearmDeathsPer100k: double |
+| - drugOverdoseDeathsPer100k: double |
+| - ratio: double       |
+| - message: String     |
++-----------------------+
+| + State(String, String, String, String, double, String)
+| + getStateName(): String
+| + getPopulation(): int
+| + getFirearmDeathsPer100k(): double
+| + getDrugOverdoseDeathsPer100k(): double
+| + getRatio(): double
+| + getMessage(): String
+| + findRatioFirearmToDrugDeaths(): double
+| + findHighestRatio(State[]): State
+| + findLowestRatio(State[]): State
+| + findAverageRatio(State[]): double
+| + findCloseToOneCount(State[]): int
+| + toString(): String
++-----------------------+
+```
 
-Save as `UML_Diagram.png` or `.pdf` in the repo.
+Save as `UML_Diagram.png` or `.pdf` in the repo ( i did not make a graphical one so no image)
 
 ---
 
@@ -218,10 +231,7 @@ Write a short reflection (3–5 sentences):
 - How trustworthy are your insights?
 
 **My reflection:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+my insights can be biased due to the fact that i decided how close to being 1 to 1 it is and that 25% is not enough to say its related, the data problems i have is the data is old so the data might be inaccurate or incomplete, also there is one territory that is not assesed, meaning average might be off. my insights are trustworthy to a degree but up to interpration
 
 ---
 
